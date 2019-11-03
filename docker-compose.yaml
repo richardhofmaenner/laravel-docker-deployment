@@ -1,0 +1,13 @@
+version: "3.0"
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: deployment/app.dockerfile
+    env_file: '.env.prod'
+  web:
+    build:
+      context: ./
+      dockerfile: deployment/web.dockerfile
+    ports:
+      - 8090:80
